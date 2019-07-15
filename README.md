@@ -22,14 +22,14 @@ dependencies {
 ```
 
 ## Usage
-* Create sub class of `SettingsProvider` with defined `PREFS_NAME` field:
+* Create subclass of `SettingsProvider` with defined `PREFS_NAME` field:
 ```kotlin
 object ApplicationSettingsProvider: SettingsProvider() {
     override val PREFS_NAME = "Your_Preferences_File_Name"
 }
 ```
 > Note that both `SettingsProvider` and `Setting` classes keep references to `context` and any other Android lifecycle's components only as it's methods parameters so you can confidently use them or their subclasses as `objects`.
-* Create sub class of `Setting<T>` class providing your `ApplicationSettingsProvider` as it's `settingsProvider`:
+* Create subclass of `Setting<T>` class providing your `ApplicationSettingsProvider` as it's `settingsProvider`:
 ```kotlin
 abstract class ApplicationSetting<T>: Setting<T>() {
     override val settingsProvider = ApplicationSettingsProvider
