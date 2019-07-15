@@ -1,5 +1,5 @@
 # AndroidSettings
-This Android library provides you a simple way to handle application settings. It uses default Android's `SharedPreferences` API, so you can use it with your existing preferences.
+This Android library provides you a simple way to handle application settings. It uses default Android's `SharedPreferences` API, so you can use it with your existing preferences
 ## Setup
 Project's `build.gradle`:
 ```groovy
@@ -28,7 +28,7 @@ object ApplicationSettingsProvider: SettingsProvider() {
     override val PREFS_NAME = "Your_Preferences_File_Name"
 }
 ```
-> Note that both `SettingsProvider` and `Setting` classes keep references to `context` and any other Android lifecycle's components only as it's methods parameters so you can confidently use them or their subclasses as `objects`.
+> Note that both `SettingsProvider` and `Setting` classes keep references to `context` and any other Android lifecycle's components only as it's methods parameters so you can confidently use them or their subclasses as `objects`
 * Create subclass of `Setting<T>` class providing your `ApplicationSettingsProvider` as it's `settingsProvider`:
 ```kotlin
 abstract class ApplicationSetting<T>: Setting<T>() {
@@ -65,4 +65,7 @@ Now you can use your setting object like this:
 }
 ```
 ## Base Implementation
-This library contains ready-for-use components: `BaseSettingsProvider` and `BaseSetting`, which are a basic implementations of it's classes, which will save your settings to a shared preferences file named `"Preferences"`.
+This library contains ready-for-use components: `BaseSettingsProvider` and `BaseSetting`, which are a basic implementations of it's classes, which will save your settings to a shared preferences file named `"Preferences"`
+
+## Example
+You can see example project [here](https://github.com/Onotolo/AndroidSettingsExample)
