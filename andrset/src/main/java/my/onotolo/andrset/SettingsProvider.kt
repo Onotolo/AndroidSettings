@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Context
 
 @Suppress("IMPLICIT_CAST_TO_ANY", "UNCHECKED_CAST")
-object SettingsProvider {
+abstract class SettingsProvider {
 
-    var PREFS_NAME = "Preferences"
+    abstract var PREFS_NAME: String
 
     fun <T>setValue(context: Context?, settingId: String, value: T) {
 

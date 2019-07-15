@@ -2,10 +2,11 @@ package my.onotolo.andrset
 
 import android.content.Context
 
-abstract class Settings<T> {
+abstract class Setting<T> {
 
     abstract val settingNameResId: Int
     abstract val descriptionResId: Int?
+    abstract val settingsProvider: SettingsProvider
 
     fun getName(context: Context?): String? {
         return context?.getString(settingNameResId)
@@ -20,10 +21,10 @@ abstract class Settings<T> {
     abstract val defaultValue: T
 
     open operator fun get(context: Context?): T {
-        return SettingsProvider.getValue(context, id, defaultValue)
+        return settingsProvider.getValue(context, id, defaultValue)
     }
 
     open operator fun set(context: Context?, value: T) {
-        SettingsProvider.setValue(context, id, value)
+        settingsProvider.setValue(context, id, value)
     }
 }
