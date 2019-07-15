@@ -1,5 +1,6 @@
 # AndroidSettings
-
+This Android library provides you a simple way to handle application settings. It uses default Android's `SharedPreferences` API, so you can use it with your existing preferences.
+## Setup
 Project's `build.gradle`:
 ```groovy
 allprojects {
