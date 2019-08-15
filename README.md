@@ -17,7 +17,7 @@ Module's `build.gradle`:
 ```groovy
 dependencies {
     ...
-    implementation 'my.onotolo.android:android-settings:0.0.3'
+    implementation 'my.onotolo.android:android-settings:0.0.4'
 }
 ```
 
@@ -40,9 +40,6 @@ abstract class ApplicationSetting<T>: Setting<T>() {
 object IsTimerHidden: ApplicationSetting<Boolean>() {
 
     override val defaultValue = false
-
-    override val settingNameResId = R.string.set_hide_timer
-    override val descriptionResId = R.string.set_hide_timer_descr
     override val id: String = "Hide timer"
 }
 ```
