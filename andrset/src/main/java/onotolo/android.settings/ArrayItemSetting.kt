@@ -1,10 +1,10 @@
-package my.onotolo.andrset
+package onotolo.android.settings
 
 import android.content.Context
 
-abstract class CollectionItemSetting<T>: Setting<T> {
+abstract class ArrayItemSetting<T>: Setting<T> {
 
-    abstract val array: Collection<T>
+    abstract val array: Array<T>
 
     override fun get(context: Context?): T {
         val index =
@@ -13,7 +13,7 @@ abstract class CollectionItemSetting<T>: Setting<T> {
                 id,
                 array.indexOf(defaultValue)
             )
-        return array.elementAt(index)
+        return array[index]
     }
 
     override fun set(context: Context?, value: T) {

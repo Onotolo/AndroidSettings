@@ -1,4 +1,4 @@
-package my.onotolo.andrset
+package onotolo.android.settings
 
 import android.content.Context
 
