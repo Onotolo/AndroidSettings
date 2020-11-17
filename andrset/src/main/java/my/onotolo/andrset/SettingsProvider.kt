@@ -17,8 +17,12 @@ abstract class SettingsProvider {
                     is Boolean -> putBoolean(settingId, value)
                     is Int -> putInt(settingId, value)
                     is String -> putString(settingId, value)
+                    is Float -> putFloat(settingId, value)
+                    is Long -> putLong(settingId, value)
+                    is MutableSet<*> -> putStringSet(settingId, value as MutableSet<String>)
                 }
-            }?.apply()
+                apply()
+            }
     }
 
     fun <T>getValue(context: Context?, settingId: String, defaultValue: T): T {
@@ -26,12 +30,13 @@ abstract class SettingsProvider {
         var value: T = defaultValue
 
         context?.getSharedPreferences(PREFS_NAME, Activity.MODE_PRIVATE)?.apply {
-
             value = when (defaultValue) {
-
                 is Boolean -> getBoolean(settingId, defaultValue)
                 is Int -> getInt(settingId, defaultValue)
                 is String -> getString(settingId, defaultValue)
+                is Float -> getFloat(settingId, defaultValue)
+                is Long -> getLong(settingId, defaultValue)
+                is MutableSet<*> -> getStringSet(settingId, defaultValue as MutableSet<String>)
                 else -> defaultValue
             } as T
         }

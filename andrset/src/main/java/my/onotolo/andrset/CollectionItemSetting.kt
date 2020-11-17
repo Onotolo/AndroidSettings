@@ -2,7 +2,7 @@ package my.onotolo.andrset
 
 import android.content.Context
 
-abstract class CollectionItemSetting<T>: Setting<T>() {
+abstract class CollectionItemSetting<T>: Setting<T> {
 
     abstract val array: Collection<T>
 
