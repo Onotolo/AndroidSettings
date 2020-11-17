@@ -41,15 +41,6 @@ afterEvaluate {
                 artifactId 'android-settings'
                 version android.defaultConfig.versionName
             }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                from components.debug
-
-                groupId 'my.onotolo.android'
-                artifactId 'android-settings'
-                version android.defaultConfig.versionName
-            }
         }
         repositories {
             maven {
