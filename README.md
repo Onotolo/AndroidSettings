@@ -70,7 +70,7 @@ abstract class ApplicationSetting<T>: Setting<T> {
 ```
 * Create special classes for your application's settings. You can define them as `object`'s:
 ```kotlin
-object IsTimerHidden: ApplicationSetting<Boolean> {
+object IsTimerHidden: ApplicationSetting<Boolean>() {
 
     override val defaultValue = false
     override val id: String = "Hide timer"
